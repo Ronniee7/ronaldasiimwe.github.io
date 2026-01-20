@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asiimwe Ronald | Visionary Social Entrepreneur</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #d4af37; /* Gold - Excellence */
+            --secondary: #10b981; /* Emerald - Growth/Uganda */
+            --dark: #0f172a; /* Deep Slate */
+            --light: #f8fafc;
+            --accent: #6366f1;
+            --gradient: linear-gradient(135deg, #d4af37 0%, #10b981 100%);
+            --glass: rgba(255, 255, 255, 0.03);
+            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: var(--transition);
+            background: transparent;
+        }
+
+        nav.scrolled {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            opacity: 0.8;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+            color: var(--primary);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding: 0 5%;
+            background: radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            z-index: 10;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-title span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.8;
+            max-width: 700px;
+            margin-inline: auto;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        /* --- Sections General --- */
+        section {
+            padding: 100px 5%;
+            position: relative;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .label {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* --- About Me --- */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 600px;
+            background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop') center/cover;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        /* --- Impact Stats --- */
+        .impact {
+            background: #0a0f1d;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .stat-card h2 {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- Projects Grid --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--glass);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px);
+            background: rgba(255,255,255,0.06);
+            border-color: var(--primary);
+        }
+
+        .project-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .project-info {
+            padding: 2rem;
+        }
+
+        /* --- Mentorship Timeline --- */
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: var(--gradient);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin-bottom: 4rem;
+            width: 50%;
+            padding-right: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+            padding-right: 0;
+            padding-left: 3rem;
+        }
+
+        /* --- Blog --- */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .blog-card {
+            background: white;
+            color: var(--dark);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .blog-card:hover {
+            transform: scale(1.02);
+        }
+
+        .blog-content { padding: 1.5rem; }
+
+        /* --- Contact --- */
+        .contact-wrapper {
+            background: var(--glass);
+            padding: 4rem;
+            border-radius: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 8px;
+        }
+
+        /* --- Animations --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 968px) {
+            .about-container, .contact-wrapper { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .timeline-item { width: 100%; padding-left: 2rem !important; }
+            .timeline::before { left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="logo">ASIIMWE RONALD</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Impact</a></li>
+            <li><a href="#mentorship">Mentorship</a></li>
+            <li><a href="#blog">Journal</a></li>
+            <li><a href="#contact" class="playfair">Connect</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="label reveal">Innovation • Empowerment • Faith</span>
+            <h1 class="hero-title">From Vision to <span>Impact</span> — Building Hope & Futures.</h1>
+            <p class="hero-subtitle">Asiimwe Ronald is a visionary social entrepreneur and innovator dedicated to empowering the next generation through sustainable enterprise and mentorship.</p>
+            <div class="cta-group">
+                <a href="#projects" class="btn btn-primary">Explore My Work</a>
+                <a href="#contact" class="btn btn-secondary">Partner With Me</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-container">
+            <div class="about-image reveal"></div>
+            <div class="about-text reveal">
+                <span class="label">My Journey</span>
+                <h2 class="section-title">A Builder of People <br>& Systems</h2>
+                <p>With a background in <strong>Information Technology</strong> and a <strong>Master’s in Innovation & Industrial Technology</strong>, I bridge the gap between technical excellence and social good.</p>
+                <p>As the Associate Executive Director of <strong>YCBN</strong>, I dedicate my life to restoring dignity to youth through skills development and project incubation. I believe in a future where every young person has the tools to create their own destiny.</p>
+                <p><em>"Innovation is not just about technology; it's about solving human problems with empathy and foresight."</em></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="impact reveal">
+        <div class="stat-card">
+            <h2 class="counter" data-target="1500">0</h2>
+            <p>Youth Mentored</p>
+        </div>
+        <div class="stat-card">
+            <h2 class="counter" data-target="50">0</h2>
+            <p>Startups Incubated</p>
+        </div>
+        <div class="stat-card">
+            <h2 class="counter" data-target="10">0</h2>
+            <p>Social Awards</p>
+        </div>
+        <div class="stat-card">
+            <h2 class="counter" data-target="12">0</h2>
+            <p>Active Communities</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-header reveal">
+            <span class="label">Portfolio of Change</span>
+            <h2 class="section-title">Major Initiatives</h2>
+        </div>
+        <div class="project-grid">
+            <div class="project-card reveal">
+                <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop')"></div>
+                <div class="project-info">
+                    <h3>YCBN Network</h3>
+                    <p>Associate Executive Director. Empowering youth through structured mentorship and capacity building.</p>
+                    <a href="https://ycnbn.org" target="_blank" class="btn btn-secondary" style="margin-top: 1rem; padding: 0.5rem 1.5rem; font-size: 0.8rem;">Visit Site</a>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1461354464878-ad92f492a5a0?q=80&w=2070&auto=format&fit=crop')"></div>
+                <div class="project-info">
+                    <h3>Food Point</h3>
+                    <p>CEO. Uganda's leading supplier of fresh produce, connecting local farmers to sustainable markets.</p>
+                    <button class="btn btn-secondary" style="margin-top: 1rem; padding: 0.5rem 1.5rem; font-size: 0.8rem;">Business Profile</button>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop')"></div>
+                <div class="project-info">
+                    <h3>SkillHub Incubation</h3>
+                    <p>Turning innovative ideas into viable social enterprises through a 6-month intensive incubator program.</p>
+                    <button class="btn btn-secondary" style="margin-top: 1rem; padding: 0.5rem 1.5rem; font-size: 0.8rem;">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mentorship" style="background: #0d121f;">
+        <div class="section-header reveal" style="text-align: center;">
+            <span class="label">The Roadmap</span>
+            <h2 class="section-title">Empowerment Process</h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item reveal">
+                <h3 class="playfair">01. Discovery</h3>
+                <p>Identifying raw talent and passion in underserved communities.</p>
+            </div>
+            <div class="timeline-item reveal">
+                <h3 class="playfair">02. Skill Acquisition</h3>
+                <p>Technical training in IT, agriculture, and industrial technology.</p>
+            </div>
+            <div class="timeline-item reveal">
+                <h3 class="playfair">03. Mentorship</h3>
+                <p>One-on-one guidance with industry leaders and faith-inspired leaders.</p>
+            </div>
+            <div class="timeline-item reveal">
+                <h3 class="playfair">04. Launch</h3>
+                <p>Supporting the birth of social enterprises that solve local problems.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog">
+        <div class="section-header reveal">
+            <span class="label">Insights & Thought Leadership</span>
+            <h2 class="section-title">The Innovator's Journal</h2>
+        </div>
+        <div class="blog-grid">
+            <div class="blog-card reveal">
+                <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2070&auto=format&fit=crop')"></div>
+                <div class="blog-content">
+                    <span class="label" style="font-size: 0.6rem;">Social Innovation</span>
+                    <h4>Scaling Impact in Emerging Markets</h4>
+                    <p>How we can use technology to multiply social outcomes without increasing costs.</p>
+                </div>
+            </div>
+            <div class="blog-card reveal">
+                <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop')"></div>
+                <div class="blog-content">
+                    <span class="label" style="font-size: 0.6rem;">Leadership</span>
+                    <h4>Leading with Faith and Excellence</h4>
+                    <p>Integrating values into business models for long-term sustainability and dignity.</p>
+                </div>
+            </div>
+            <div class="blog-card reveal">
+                <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop')"></div>
+                <div class="blog-content">
+                    <span class="label" style="font-size: 0.6rem;">Youth Empowerment</span>
+                    <h4>The Future of Uganda's Workforce</h4>
+                    <p>Why vocational skills and IT are the twin pillars of our economic revolution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="text-align: center; background: var(--gradient);">
+        <div class="reveal">
+            <h2 class="playfair" style="font-size: 2.5rem; max-width: 800px; margin: 0 auto; line-height: 1.4; color: white;">
+                "We don't just build projects; we build people who build the future. Dignity is the ultimate innovation."
+            </h2>
+            <p style="margin-top: 2rem; font-weight: 800; letter-spacing: 2px;">— ASIIMWE RONALD</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-wrapper reveal">
+            <div>
+                <span class="label">Contact</span>
+                <h2 class="section-title">Let’s Create Change Together</h2>
+                <p>Open for global partnerships, speaking engagements, and mentorship inquiries.</p>
+                <div style="margin-top: 2rem;">
+                    <p><i class="fas fa-envelope" style="color: var(--primary); margin-right: 10px;"></i> r.asiimwe@ycnbn.org</p>
+                    <p><i class="fab fa-whatsapp" style="color: var(--primary); margin-right: 10px;"></i> Connect on WhatsApp</p>
+                </div>
+                <div class="social-links" style="margin-top: 2rem; display: flex; gap: 1rem;">
+                    <a href="#" style="color: white; font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" style="color: white; font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+                    <a href="#" style="color: white; font-size: 1.5rem;"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer style="padding: 50px 5% text-align: center; border-top: 1px solid rgba(255,255,255,0.05);">
+        <div style="text-align: center;">
+            <div class="logo" style="margin-bottom: 1rem;">ASIIMWE RONALD</div>
+            <p style="opacity: 0.6; font-size: 0.9rem;">&copy; 2026 Asiimwe Ronald. All Rights Reserved. Built for Impact.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sticky Navbar Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll Reveal Animation
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target + "+";
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        // Trigger counter when visible
+        const statSection = document.querySelector('.impact');
+        const observer = new IntersectionObserver((entries) => {
+            if(entries[0].isIntersecting) {
+                animateCounters();
+                observer.unobserve(statSection);
+            }
+        });
+        observer.observe(statSection);
+    </script>
+</body>
+</html>
